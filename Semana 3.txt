@@ -1,0 +1,11 @@
+Semana 3
+SQL Server en Resumen
+¿Qué es?: Es el programa de Microsoft para guardar y organizar un montón de información sin que se vuelva un caos.
+Diseño (Modelo ER): Antes de meter datos, dibujas el plan. Las Entidades son las "cosas" (como Clientes o Productos) y las Relaciones son cómo se conectan entre ellas.
+ Comandos clave:
+  CREATE DATABASE y TABLE: Para crear el "archivo" y las "tablas" donde irá todo.
+  INSERT INTO: Para llenar las tablas con datos reales.
+  SELECT: El comando que más vas a usar para buscar y ver tu información.
+  INNER JOIN: Sirve para "pegar" dos tablas que tienen algo en común y ver la info completa.
+   WHERE y ORDER BY: El primero es para filtrar (ej: "solo los que se llamen Juan") y el segundo para ordenar (de la A a la Z).
+En resumen: SQL Server te ayuda a que una empresa no pierda sus datos y pueda encontrarlos rápido para tomar buenas decisiones.
