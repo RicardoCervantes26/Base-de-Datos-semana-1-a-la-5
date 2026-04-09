@@ -1,0 +1,9 @@
+Semana 2
+Mal uso de llaves foraneas y primarias
+pues hayvarios casos en el cuallas llaves son mal usadas y esto puede empezar al estructurar mal nuestros datos y tablas simepre es mejor trabajar con llavesprimarias y foraneas para queal modificar un dato en una las demas tablas puedan actualizar sus datos.
+REDUNDANCIA:
+Esta empieza al no usar llaves foraneas al conectar una tabla con otra esto provocaria que digamos quito un dato de la tabla A y este mismo dato no lo conecto a la tabla B con una llave foranea tendria que eliminarel dato en la tabla B si fuera con un volumen mayor de datos tendria que hacer varios cambios y esono es lo mas favorable
+
+FALTA DE INTEGRIDAD REFRENCIAL:
+La falta de integridad referencial es el caos donde los datos pierden su relación y coherencia, convirtiendo tu base de datos en un conjunto de información desconectada y poco confiable.
+ 
