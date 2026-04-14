@@ -1,0 +1,56 @@
+Aquí tienes ejemplos prácticos aplicando los operadores lógicos y de agrupación de la **Semana 04** sobre tu tabla LIBRO.
+### 1. Operadores de Filtrado Lógico
+Estos operadores te permiten realizar búsquedas más complejas que un simple igual (=).
+ * **LIKE (Búsqueda de patrones):** Encuentra libros cuyos títulos comienzan con 'El'.
+   ```sql
+   SELECT * FROM LIBRO WHERE titulo LIKE 'El%';
+   
+   ```
+ * **BETWEEN (Rangos):** Selecciona libros con un precio entre 30 y 50 soles.
+   ```sql
+   SELECT * FROM LIBRO WHERE precio BETWEEN 30 AND 50;
+   
+   ```
+ * **IN (Conjuntos):** Busca libros de autores específicos.
+   ```sql
+   SELECT * FROM LIBRO WHERE autor IN ('Stephen King', 'Isaac Asimov', 'Dan Brown');
+   
+   ```
+ * **IS NULL (Valores nulos):** Verifica si algún libro no tiene autor registrado (aunque en tu tabla es NOT NULL).
+   ```sql
+   SELECT * FROM LIBRO WHERE autor IS NULL;
+   
+   ```
+### 2. Consultas con Agrupación (GROUP BY y HAVING)
+Útiles para obtener estadísticas de tu inventario.
+ * **GROUP BY con Funciones de Agregación:** Agrupa por autor para ver cuántos libros tiene cada uno y el promedio de sus precios.
+   ```sql
+   SELECT autor, COUNT(*) AS CantidadLibros, AVG(precio) AS PrecioPromedio
+   FROM LIBRO
+   GROUP BY autor;
+   
+   ```
+ * **HAVING (Filtro de grupos):** Muestra solo los autores que tienen un stock total superior a 10 unidades.
+   ```sql
+   SELECT autor, SUM(stock) AS TotalStock
+   FROM LIBRO
+   GROUP BY autor
+   HAVING SUM(stock) > 10;
+   
+   ```
+### 3. Lógica Condicional con CASE
+Permite crear columnas calculadas basadas en condiciones, similar a un "if".
+ * **Categorización de Precios:** Clasifica los libros según su costo actual.
+   ```sql
+   SELECT titulo, precio,
+          CASE 
+              WHEN precio < 30 THEN 'Económico'
+              WHEN precio BETWEEN 30 AND 55 THEN 'Estándar'
+              ELSE 'Premium'
+          END AS CategoriaPrecio
+   FROM LIBRO;
+   
+   ```
+### 4. Lógica de Tres Valores (UNKNOWN)
+Recuerda que si trabajas con valores nulos, SQL Server no devuelve TRUE o FALSE, sino UNKNOWN. Esto es vital para evitar errores en reportes de stock o precios faltantes.
+¿Te gustaría que apliquemos alguna de estas consultas a un procedimiento almacenado para tu proyecto?
