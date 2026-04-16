@@ -1,0 +1,13 @@
+Semana 4 Resumen
+
+AQUÍ TIENES EL RESUMEN DE LA SEMANA 04:
+
+OPERADORES LOGICOS 
+ IS NULL: Se utiliza para verificar si un valor es nulo. No se puede usar el signo igual para comprobar nulos. LIKE: Se utiliza para buscar un patron en una columna. Usa comodines como % (cero o mas caracteres) y _ (un solo caracter).
+ IN: Se utiliza para comprobar si un valor se encuentra dentro de un conjunto especifico de valores. 
+ BETWEEN: Se utiliza para comprobar si un valor se encuentra dentro de un rango determinado.
+LOGICA DE TRES VALORES SQL Server maneja tres valores logicos: TRUE, FALSE y UNKNOWN. Este ultimo aparece al realizar comparaciones con valores nulos.
+FUNCIONES DE GRUPO Y AGRUPACION 
+Funciones de Grupo: Realizan calculos sobre un conjunto de valores para devolver un unico resultado. Ejemplos: COUNT, SUM, AVG, MIN y MAX. GROUP BY: Se utiliza para agrupar filas que tienen el mismo valor en columnas especificadas. 
+HAVING: Se utiliza para filtrar los resultados de una agrupacion. Se aplica siempre despues de la clausula GROUP BY.
+USO DE CASE Permite realizar condicionales dentro de una consulta, funcionando de manera similar a un bloque IF en programacion para categorizar datos.
