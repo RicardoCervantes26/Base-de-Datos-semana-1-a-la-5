@@ -1,9 +1,9 @@
-Semana 2
-Mal uso de llaves foraneas y primarias
-pues hayvarios casos en el cuallas llaves son mal usadas y esto puede empezar al estructurar mal nuestros datos y tablas simepre es mejor trabajar con llavesprimarias y foraneas para queal modificar un dato en una las demas tablas puedan actualizar sus datos.
-REDUNDANCIA:
-Esta empieza al no usar llaves foraneas al conectar una tabla con otra esto provocaria que digamos quito un dato de la tabla A y este mismo dato no lo conecto a la tabla B con una llave foranea tendria que eliminarel dato en la tabla B si fuera con un volumen mayor de datos tendria que hacer varios cambios y esono es lo mas favorable
+RESUMEN DE LA CLASE SOBRE LLAVES PRIMARIAS Y FORANEAS
 
-FALTA DE INTEGRIDAD REFRENCIAL:
-La falta de integridad referencial es el caos donde los datos pierden su relación y coherencia, convirtiendo tu base de datos en un conjunto de información desconectada y poco confiable.
- 
+En esta sesion revisamos como un mal diseño de base de datos puede causar muchos problemas principalmente por el tema de la redundancia que es cuando repetimos datos como nombres de profesores en la tabla de alumnos sin necesidad 
+
+CASO DE REDUNDANCIA E INCONSISTENCIA Segun las diapositivas si tenemos los nombres escritos directamente en varias tablas y un profesor cambia su nombre tendriamos que actualizar cada fila manualmente Esto es muy ineficiente y genera inconsistencias porque es facil que se nos pase algun registro y terminemos con datos que no coinciden entre si 
+
+FALTA DE INTEGRIDAD Otro problema es que sin llaves foraneas no existe una regla que asegure que los datos referenciados realmente existan en el sistema lo que termina rompiendo la integridad de la base de datos 
+
+LA SOLUCION CORRECTA El profesor explica que debemos separar la informacion en tablas independientes para profesores cursos y estudiantes asignando llaves primarias unicas para cada registro Despues usamos las llaves foraneas como puentes para conectar las tablas de forma que si actualizas un dato en la tabla principal el cambio se refleje en todo el sistema de forma automatica y segura
