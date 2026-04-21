@@ -1,5 +1,5 @@
 Semana 3
-SQL Server en Resumen
+
 ¿Qué es?: Es el programa de Microsoft para guardar y organizar un montón de información sin que se vuelva un caos.
 Diseño (Modelo ER): Antes de meter datos, dibujas el plan. Las Entidades son las "cosas" (como Clientes o Productos) y las Relaciones son cómo se conectan entre ellas.
  Comandos clave:
