@@ -6,4 +6,4 @@ CASO DE REDUNDANCIA E INCONSISTENCIA Segun las diapositivas si tenemos los nombr
 
 FALTA DE INTEGRIDAD Otro problema es que sin llaves foraneas no existe una regla que asegure que los datos referenciados realmente existan en el sistema lo que termina rompiendo la integridad de la base de datos 
 
-LA SOLUCION CORRECTA El profesor explica que debemos separar la informacion en tablas independientes para profesores cursos y estudiantes asignando llaves primarias unicas para cada registro Despues usamos las llaves foraneas como puentes para conectar las tablas de forma que si actualizas un dato en la tabla principal el cambio se refleje en todo el sistema de forma automatica y segura
+LA SOLUCION CORRECTA El profesor explico que debemos separar la informacion en tablas independientes para profesores cursos y estudiantes asignando llaves primarias unicas para cada registro Despues usamos las llaves foraneas como puentes para conectar las tablas de forma que si actualizas un dato en la tabla principal el cambio se refleje en todo el sistema de forma automatica y segura
