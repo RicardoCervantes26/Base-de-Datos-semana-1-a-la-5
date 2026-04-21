@@ -1,7 +1,5 @@
 Semana 4 Resumen
 
-AQUÍ TIENES EL RESUMEN DE LA SEMANA 04:
-
 OPERADORES LOGICOS 
  IS NULL: Se utiliza para verificar si un valor es nulo. No se puede usar el signo igual para comprobar nulos. LIKE: Se utiliza para buscar un patron en una columna. Usa comodines como % (cero o mas caracteres) y _ (un solo caracter).
  IN: Se utiliza para comprobar si un valor se encuentra dentro de un conjunto especifico de valores. 
