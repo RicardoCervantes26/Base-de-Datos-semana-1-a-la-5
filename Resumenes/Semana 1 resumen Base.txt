@@ -1,11 +1,12 @@
-Una base datos es un conjunto organizado de datos que se almacena  en una estrructura facil de gestionar.
--Conceptos Clave:
-  Tabla la plantilla donde se va hacer la base de datos.
-  Registro es como el objeto la instacia.
-  Campo es como el tipo de dato como un atributo.
-  Clave Primaria es el campo unico qeu identifica cada registro  para una actualizacion segura.
-  Consulta es hacerle una pregunta a la abse de datos.
+RESUMEN DE LA SESION: INTRODUCCION A BASE DE DATOS
 
-Se dividen en relacional y no relacional
-  -La relacional se usa para datos estructurados(Ordenado).
-  - La no relacional se usa para datos no estructurados.
+DEFINICION Una base de datos es un conjunto organizado de informacion que se almacena de forma estructurada para facilitar su acceso, gestion y actualizacion. Un ejemplo sencillo es una agenda de contactos, donde cada persona tiene nombre, telefono y correo, formando una tabla con filas y columnas. 
+CONCEPTOS CLAVE
+Tabla: Similar a una hoja de calculo, compuesta por columnas y filas. 
+Registro: Una fila que contiene datos de una sola unidad, como un cliente o un libro. 
+Campo: Una columna que representa un tipo de dato especifico, como nombre o precio. 
+Clave primaria: Campo unico que identifica cada registro, por ejemplo, el DNI o un ID. 
+Consulta (query): Preguntas realizadas a la base de datos para obtener informacion especifica. 
+TIPOS DE BASES DE DATOS
+Relacional (SQL): Estructurada mediante tablas y relaciones. Ejemplos: MySQL, PostgreSQL, SQL Server. 
+No relacional (NoSQL): Flexible para datos no estructurados. Ejemplos: MongoDB, Firebase. 
