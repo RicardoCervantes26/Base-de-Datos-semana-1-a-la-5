@@ -1,0 +1,105 @@
+He revisado detenidamente tu material de la **Semana 06** y he adaptado cada ejemplo y concepto del PPT a tu base de datos **BOOKSTORE**, respetando estrictamente el orden de las diapositivas.
+## 1. Subconsultas con Operadores de Comparación
+**Concepto:** Se utiliza una subconsulta escalar para obtener un valor (como un promedio o un máximo) y compararlo con los registros de la tabla principal.
+### Ejemplo: Publicaciones con un precio superior al promedio
+```sql
+SELECT titulo, precio 
+FROM dbo.PUBLICACION 
+WHERE precio > (SELECT AVG(precio) FROM dbo.PUBLICACION);
+
+```
+## 2. Subconsultas con EXISTS
+**Concepto:** Verifica si la subconsulta devuelve algún resultado. Es ideal para relacionar tablas sin duplicar filas.
+### Ejemplo: Listar empleados que han realizado alguna venta
+```sql
+SELECT nombre, apellido 
+FROM dbo.EMPLEADO e
+WHERE EXISTS (
+    SELECT 1 
+    FROM dbo.VENTA v 
+    WHERE v.idempleado = e.idempleado
+);
+
+```
+## 3. Subconsultas con NOT EXISTS
+**Concepto:** Verifica que la subconsulta no devuelva ninguna fila.
+### Ejemplo: Listar empleados que NO han registrado ninguna venta
+```sql
+SELECT nombre, apellido 
+FROM dbo.EMPLEADO e
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM dbo.VENTA v 
+    WHERE v.idempleado = e.idempleado
+);
+
+```
+## 4. Subconsultas con IN
+**Concepto:** Selecciona registros que coinciden con una lista de valores devuelta por la subconsulta.
+### Ejemplo: Ventas de publicaciones que pertenecen a la categoría 'Libro'
+```sql
+SELECT idventa, cliente, idpublicacion 
+FROM dbo.VENTA 
+WHERE idpublicacion IN (
+    SELECT idpublicacion 
+    FROM dbo.PUBLICACION 
+    WHERE idtipo = 'LIB'
+);
+
+```
+## 5. Combinación con INNER JOIN
+**Concepto:** Devuelve filas cuando hay coincidencias en ambas tablas.
+### Ejemplo: Obtener nombres de empleados y los títulos que vendieron
+```sql
+SELECT e.nombre, p.titulo 
+FROM dbo.EMPLEADO e
+INNER JOIN dbo.VENTA v ON e.idempleado = v.idempleado
+INNER JOIN dbo.PUBLICACION p ON v.idpublicacion = p.idpublicacion;
+
+```
+## 6. Combinación con LEFT JOIN
+**Concepto:** Devuelve todos los registros de la tabla izquierda, aunque no tengan coincidencia en la derecha.
+### Ejemplo: Listar todos los empleados y sus ventas (incluyendo los que no vendieron nada)
+```sql
+SELECT e.nombre, v.idventa 
+FROM dbo.EMPLEADO e
+LEFT JOIN dbo.VENTA v ON e.idempleado = v.idempleado;
+
+```
+## 7. Combinación con RIGHT JOIN
+**Concepto:** Devuelve todos los registros de la tabla derecha.
+### Ejemplo: Listar todas las publicaciones y sus ventas (incluyendo libros que nunca se vendieron)
+```sql
+SELECT p.titulo, v.idventa 
+FROM dbo.VENTA v
+RIGHT JOIN dbo.PUBLICACION p ON v.idpublicacion = p.idpublicacion;
+
+```
+## 8. Combinación con FULL JOIN
+**Concepto:** Devuelve todos los registros cuando hay una coincidencia en cualquiera de las tablas.
+### Ejemplo: Obtener todos los empleados y todas las ventas, sin excluir a nadie
+```sql
+SELECT e.nombre AS empleado, v.idventa AS venta
+FROM dbo.EMPLEADO e
+FULL JOIN dbo.VENTA v ON e.idempleado = v.idempleado;
+
+```
+## 9. Combinación con CROSS JOIN
+**Concepto:** Producto cartesiano; combina cada fila de la primera tabla con todas las de la segunda.
+### Ejemplo: Generar todas las combinaciones posibles de empleados y tipos de productos
+```sql
+SELECT e.nombre, t.descripcion 
+FROM dbo.EMPLEADO e
+CROSS JOIN dbo.TIPO t;
+
+```
+## 10. Operador UNION y UNION ALL
+**Concepto:** Combina el resultado de dos consultas. UNION elimina duplicados y UNION ALL los mantiene.
+### Ejemplo: Unir nombres de clientes y nombres de empleados en una sola lista
+```sql
+SELECT cliente AS nombre_persona FROM dbo.VENTA
+UNION
+SELECT nombre FROM dbo.EMPLEADO;
+
+```
+¿Hay alguna de estas estructuras que necesites profundizar para tu examen o para el **Proyecto BRIDGES**?
