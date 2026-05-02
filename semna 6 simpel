@@ -1,0 +1,93 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+
+    // Atributos de clase para acceso global
+    static ArrayList<String> inventario = new ArrayList<>();
+    static Scanner teclado = new Scanner(System.in);
+
+    // ==========================================================
+    // METODO PRINCIPAL (Solo ejecución)
+    // ==========================================================
+    public static void main(String[] args) {
+        int opcion=0;
+       do {
+           System.out.println("MENU");
+           System.out.println("OPCION 1 AGREGAR");
+           System.out.println("OPCION 2 ELIMINAR");
+           System.out.println("OPCION 3 Mostrar");
+           System.out.println("OPCION 4 Salir");
+           opcion=leerOpcion();
+           switch (opcion){
+               case 1:procesarEntrada();
+               break;
+               case 2: desencolarObjeto();
+               break;
+               case 3: mostrarInventario();
+               break;
+               case 4:
+                   System.out.println("Saliedno");
+                   break;
+
+
+           }
+       }while(opcion!=4);
+
+    }
+
+    // ==========================================================
+    // METODOS DE OPERACIÓN (Lógica fuera del main)
+    // ==========================================================
+
+    // 1. Implementación de ENQUEUE
+    public static void encolarObjeto(String objeto) {
+        inventario.add(objeto);
+        System.out.println("-> [OK] " + objeto + " guardado al fondo de la mochila.");
+    }
+
+    // 2. Implementación de DEQUEUE
+    public static void desencolarObjeto() {
+        if (!inventario.isEmpty()) {
+            // El primero en entrar (índice 0) es el primero en salir
+            String sacado = inventario.remove(0);
+            System.out.println("-> [USO] Has extraído y usado: " + sacado);
+        } else {
+            System.out.println("-> [ERROR] No tienes objetos para usar.");
+        }
+    }
+
+    // 3. Método para mostrar el estado
+    public static void mostrarInventario() {
+        if (inventario.isEmpty()) {
+            System.out.println("\n[INVENTARIO VACÍO]");
+        } else {
+            System.out.println("\n--- OBJETOS EN COLA (ORDEN DE USO) ---");
+            for (int i = 0; i < inventario.size(); i++) {
+                System.out.println("Slot [" + i + "]: " + inventario.get(i));
+            }
+            System.out.println("--------------------------------------");
+        }
+    }
+
+    // 4. Métodos auxiliares de interfaz
+    private static void imprimirMenu() {
+        System.out.println("\nMENÚ DE ACCIÓN:");
+        System.out.println("1. Recoger objeto (Enqueue)");
+        System.out.println("2. Usar objeto (Dequeue)");
+        System.out.println("3. Revisar mochila");
+        System.out.println("4. Salir");
+        System.out.print("¿Qué debe hacer Ethan?: ");
+    }
+
+    private static int leerOpcion() {
+        int opt = teclado.nextInt();
+        teclado.nextLine(); // Limpieza de buffer
+        return opt;
+    }
+
+    private static void procesarEntrada() {
+        System.out.print("Nombre del objeto: ");
+        String item = teclado.nextLine();
+        encolarObjeto(item);
+    }
